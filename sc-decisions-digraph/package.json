@@ -1,0 +1,11 @@
+{
+  "name": "sc-decisions-digraph",
+  "version": "1.0.0",
+  "description": "Поиски структуры данных для калькулятора решений КБ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniyal Guliev",
+  "license": "ISC"
+}

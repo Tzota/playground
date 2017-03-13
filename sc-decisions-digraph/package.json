@@ -4,12 +4,15 @@
   "description": "Поиски структуры данных для калькулятора решений КБ",
   "main": "index.js",
   "scripts": {
+    "prestart": "babel src -d lib",
+    "start": "node index.js",
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniyal Guliev",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "knockout": "^3.4.2"
   },
   "devDependencies": {

@@ -188,7 +188,6 @@ class CalcVertex extends Vertex {
     }
 }
 
-
 class DisplayProperty {
     constructor(caption, key, type, value = null) {
         this._caption = caption;
@@ -210,32 +209,6 @@ class DisplayProperty {
     }
     set Value(val) {
         this._value = val;
-    }
-}
-
-//----------------Concrete----------------------
-
-class DesktopDistant extends SolutionCalc {
-    constructor() {
-        super();
-        const grounds = new DisplayProperty('Количество площадок', 'grounds', 'Integer', 0);
-        const node1 = new CalcVertex('1', 'Количество площадок между которыми необходимо организовать защищенное соединение', [grounds]);
-
-
-        const node1_1 = new CalcVertex('1.1', 'Укажите количество площадок с пропускной способностью', []);
-
-        const edge1 = new CalcEdge(node1, node1_1, (v/*, w*/) => parseInt(v.Answer('grounds').Value, 10) > 0 );
-
-        this.addEdge(edge1);
-
-        this._grounds = ko.observable(grounds.Value);
-        this._grounds.subscribe(function(newVal){
-            grounds.Value = newVal;
-        }, this);
-    }
-
-    get grounds() {
-        return this._grounds;
     }
 }
 
@@ -283,17 +256,10 @@ const BaseVm = function (calc) {
     self.steps.push(root);
 };
 
-const DesktopDistantVM = function(calc) {
-    BaseVm.call(this, calc);
-
-    var self = this;
-
-    self.grounds = calc.grounds;
-}
-
-// ---------------------------------------
-
 if (typeof module !== 'undefined') {
-    exports.DesktopDistant = DesktopDistant;
-    exports.DesktopDistantVM = DesktopDistantVM;
+    exports.BaseVm = BaseVm;
+    exports.DisplayProperty = DisplayProperty;
+    exports.CalcVertex = CalcVertex;
+    exports.CalcEdge = CalcEdge;
+    exports.SolutionCalc = SolutionCalc;
 }

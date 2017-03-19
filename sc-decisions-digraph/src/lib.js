@@ -1,5 +1,5 @@
 if (typeof module !== 'undefined') {
-    (global || window).ko = require('knockout');
+    (global||window).ko = require('knockout');
 }
 
 //----------------BCL----------------------
@@ -189,11 +189,12 @@ class CalcVertex extends Vertex {
 }
 
 class DisplayProperty {
-    constructor(caption, key, type, value = null) {
+    constructor(caption, key, type, value = null, enum_object) {
         this._caption = caption;
         this._key = key;
         this._type = type;
         this._value = value;
+        this._enum_object = enum_object;
     }
     get Caption() {
         return this._caption;
@@ -203,6 +204,9 @@ class DisplayProperty {
     }
     get Type() {
         return this._type;
+    }
+    get Enum() {
+        return this._enum_object;
     }
     get Value() {
         return this._value;

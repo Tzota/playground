@@ -17,6 +17,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
-    "babel-preset-env": "^1.2.1"
+    "babel-preset-env": "^1.2.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "watchify": "^3.9.0"
   }
 }

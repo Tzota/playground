@@ -195,6 +195,8 @@ class DisplayProperty {
         this._type = type;
         this._value = value;
         this._enum_object = enum_object;
+
+        this.Visible = true;
     }
     get Caption() {
         return this._caption;

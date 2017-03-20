@@ -48,6 +48,10 @@ class NetVpn extends SolutionCalc {
             }
         );
 
+        this._reserve300.Visible = ko.computed(()=> parseInt(this._grounds300.Value(), 10) > 0);
+        this._reserve1000.Visible = this._icount1000.Visible = ko.computed(()=> parseInt(this._grounds1000.Value(), 10) > 0);
+        this._reserve2500.Visible = this._icount2500.Visible = ko.computed(()=> parseInt(this._grounds2500.Value(), 10) > 0);
+
         const node1_1_1 = new CalcVertex(
             '1.1.1',
             'И ещё несколько вопросов...',

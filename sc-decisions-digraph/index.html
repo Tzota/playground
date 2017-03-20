@@ -4,8 +4,38 @@
         <meta charset="utf-8">
         <title></title>
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-debug.js"></script>-->
-        <script src="lib/index.js"></script>
     </head>
     <body>
+        <div id="viewmodel">
+            <!--<div data-bind="ko.toJSON($data, null, 2)"></div>-->
+            <div data-bind="foreach:steps">
+                <div data-bind="text:ko.toJSON($data, null, 2)"></div>
+                <dl>
+                    <dt data-bind="text:Text"></dt>
+                    <dd>
+                        <ul data-bind="foreach:Answers">
+                            <li data-bind="visible:Visible">
+                                <span data-bind="text:Caption"> </span>
+                                <!-- ko if:Type === 'Integer' -->
+                                <input data-bind="textInput:Value" />
+                                <!-- /ko -->
+                                <!-- ko if:Type === 'Boolean' -->
+                                <input type="checkbox" data-bind="checked:Value" />
+                                <!-- /ko -->
+                                <!-- ko if:Type === 'Enum' -->
+                                <select data-bind="options: Object.keys(Enum),
+                                                    optionsText: function(key) { return Enum[key]; },
+                                                    value:Value"></select>
+                                <!-- /ko -->
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <button data-bind="enable:next_enabled, click:on_next">Далее</button>
+            </div>
+        </div>
+        <script src="lib/index.js" defer></script>
     </body>
 </html>

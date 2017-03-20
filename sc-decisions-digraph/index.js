@@ -11,15 +11,25 @@ if (typeof module !== 'undefined') {
 function init() {
     const calc = new NetVpn();
     const vm = new NetVpnVM(calc);
-    console.log(vm.steps())
-    console.log('------------------------------------');
-    vm.grounds(15);
-    vm.on_next();
-    vm.grounds10(5);
-    vm.grounds300(5);
-    vm.grounds1000(5);
-    vm.on_next();
-    console.log(vm.steps());
+
+    ko.applyBindings(vm, document.getElementById('viewmodel'));
+
+    // console.log(vm.steps())
+    // console.log('------------------------------------');
+    // vm.grounds(15);
+    // vm.on_next();
+    // vm.grounds10(5);
+    // vm.grounds300(5);
+    // vm.grounds1000(5);
+    // vm.on_next();
+    // let steps = vm.steps();
+    // console.log(steps);
+    // console.log(
+    //     steps[steps.length - 1].Answers
+    //         .filter(o => o.Visible())
+    //         .map(o => o.Caption + ': ' + o.Value())
+    //         .reduce((acc, val, index, arr) => acc + '\n' + val)
+    // );
 };
 
 init();

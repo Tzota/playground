@@ -1,4 +1,4 @@
-if (typeof module !== 'undefined') {
+if (typeof module !== 'undefined' && module.exports) {
     (global||window).ko = require('knockout');
 }
 
@@ -262,7 +262,7 @@ const BaseVm = function (calc) {
     self.steps.push(root);
 };
 
-if (typeof module !== 'undefined') {
+if (typeof module !== 'undefined' && module.exports) {
     exports.BaseVm = BaseVm;
     exports.DisplayProperty = DisplayProperty;
     exports.CalcVertex = CalcVertex;

@@ -1,4 +1,4 @@
-if (typeof module !== 'undefined') {
+if (typeof module !== 'undefined' && module.exports) {
     var { BaseVm, DisplayProperty, CalcVertex, CalcEdge, SolutionCalc } = require('./lib.js');
 }
 
@@ -109,7 +109,7 @@ const NetVpnVM = function(calc) {
 
 // ---------------------------------------
 
-if (typeof module !== 'undefined') {
+if (typeof module !== 'undefined' && module.exports) {
     exports.NetVpn = NetVpn;
     exports.NetVpnVM = NetVpnVM;
 }

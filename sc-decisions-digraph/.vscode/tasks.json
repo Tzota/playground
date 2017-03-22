@@ -9,6 +9,13 @@
             "args": ["run", "build"],
             "isShellCommand": true,
             "showOutput": "always"
+        },
+        {
+            "taskName": "gulp",
+            "command": "gulp",
+            "args": ["--color"],
+            "isShellCommand": true,
+            "showOutput": "always"
         }
     ]
 }

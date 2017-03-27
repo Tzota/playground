@@ -10,7 +10,7 @@
             <!--<div data-bind="ko.toJSON($data, null, 2)"></div>-->
             <div data-bind="foreach:steps">
                 <div data-bind="text:ko.toJSON($data, null, 2)"></div>
-                <dl>
+                <dl style="border:solid 1px red;">
                     <dt data-bind="text:Text"></dt>
                     <dd>
                         <ul data-bind="foreach:Answers">
@@ -32,8 +32,9 @@
                     </dd>
                 </dl>
             </div>
-            <div>
-                <button data-bind="enable:next_enabled, click:on_next">Далее</button>
+            <div style="text-align:center;">
+                <button data-bind="enable:next_enabled, click:on_next, visible:next_visible" style="margin-left:0;margin-right:0;">Далее</button>
+                <button data-bind="visible:finish_enabled, click:on_finish" style="margin-left:0;margin-right:0;">Готово</button>
             </div>
         </div>
         <script src="lib/index.js" defer></script>

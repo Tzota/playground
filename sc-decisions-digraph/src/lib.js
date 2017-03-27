@@ -220,7 +220,7 @@ class DisplayProperty {
 
 //----------------viewmodel----------------------
 const BaseVm = function (calc) {
-    var self = this;
+    const self = this;
 
     self.graph = calc;
 
@@ -235,17 +235,36 @@ const BaseVm = function (calc) {
 
     // делать ли доступной кнопку "давайте следующий шаг"
     self.next_enabled = ko.computed(function() {
-        var steps = self.steps();
+        const steps = self.steps();
         if (steps.length == 0) {
             return false;
         }
-        var last = steps[steps.length - 1];
-        var children = self.graph.adj(last);
+        const last = steps[steps.length - 1];
+        const children = self.graph.adj(last);
+
         if (typeof(children) == 'undefined' || children.length == 0) {
             return false;
         }
         return children.filter(e => e.isOpen).length === 1;
     }, this);
+
+    // Если детей нет вообще, то, видимо, пора производить расчёт
+    self.finish_enabled = ko.computed(function(){
+        const steps = self.steps();
+        if (steps.length == 0) {
+            return false;
+        }
+        const last = steps[steps.length - 1];
+        const children = self.graph.adj(last);
+
+        // не только не должно быть детей, но и все ответы должны быть даны?
+        return typeof(children) == 'undefined' || children.length == 0;
+
+    }, this);
+
+    self.next_visible = ko.computed(function(){
+        return !self.finish_enabled();
+    });
 
     // Запросили следующий шаг
     self.on_next = function() {
@@ -256,6 +275,10 @@ const BaseVm = function (calc) {
             self.steps.push(next.to);
         }
     }
+
+    self.on_finish = function() {
+        self.on_finish_inner();
+    };
 
     // ----------------
     var root = self._find_root(calc);

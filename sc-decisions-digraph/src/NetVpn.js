@@ -105,6 +105,10 @@ const NetVpnVM = function(calc) {
     self.icount1000 = calc.icount1000;
     self.reserve2500 = calc.reserve2500;
     self.icount2500 = calc.icount2500;
+
+    self.on_finish_inner = function() {
+        alert(self.steps().map(s => s.Answers.filter(a => a.Visible).map(a => a.Value())));
+    };
 }
 
 // ---------------------------------------

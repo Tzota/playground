@@ -10,12 +10,7 @@ const babel = require('gulp-babel');
 // https://github.com/BrowserSync/recipes/blob/master/recipes/gulp.browserify/gulpfile.js
 
 gulp.task('clean', function() {
-  require('rimraf')('build', function (err) {
-    if (null !== err) {
-      console.log(err);
-      throw new Error(err);
-    }
-  });
+  require('rimraf').sync('build');
 });
 
 gulp.task('test', function(){

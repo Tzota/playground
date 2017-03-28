@@ -107,7 +107,15 @@ const NetVpnVM = function(calc) {
     self.icount2500 = calc.icount2500;
 
     self.on_finish_inner = function() {
-        alert(self.steps().map(s => s.Answers.filter(a => a.Visible).map(a => a.Value())));
+        // alert(self.steps().map(s => s.Answers.filter(a => a.Visible).map(a => a.Value())));
+        const dto = new sc_calc.jinn_dto();
+        dto.product = sc_calc.const.jinn.PRODUCT.CLIENT;
+        dto.cert_level = sc_calc.const.jinn.CERT_LEVEL.KS1;
+
+        // const calc = new sc_calc.jinn();
+        // calc.on_add_result = o => alert(JSON.stringify(o));
+
+        alert(JSON.stringify(dto));
     };
 }
 

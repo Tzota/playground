@@ -277,7 +277,13 @@ const BaseVm = function (calc) {
     }
 
     self.on_finish = function() {
-        self.on_finish_inner();
+        const data = self.on_finish_inner();
+        // Не вижу пока смысла делать вид, что это не для браузера
+        if (window && typeof(window['localStorage']) !== 'undefined') {
+            const sessionId = (new Date()).getTime();
+            window.localStorage.setItem('solution-calc-data-'+sessionId, data);
+            window.open('http://localhost:45654/index.html?session='+sessionId);
+        }
     };
 
     // ----------------

@@ -112,10 +112,7 @@ const NetVpnVM = function(calc) {
         dto.product = sc_calc.const.jinn.PRODUCT.CLIENT;
         dto.cert_level = sc_calc.const.jinn.CERT_LEVEL.KS1;
 
-        // const calc = new sc_calc.jinn();
-        // calc.on_add_result = o => alert(JSON.stringify(o));
-
-        alert(JSON.stringify(dto));
+        return [dto, dto];
     };
 }
 

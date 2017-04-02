@@ -281,8 +281,8 @@ const BaseVm = function (calc) {
         // Не вижу пока смысла делать вид, что это не для браузера
         if (window && typeof(window['localStorage']) !== 'undefined') {
             const sessionId = (new Date()).getTime();
-            window.localStorage.setItem('solution-calc-data-'+sessionId, data);
-            window.open('http://localhost:45654/index.html?session='+sessionId);
+            window.localStorage.setItem('solution-calc-data-'+sessionId, JSON.stringify(data)); // todo polyfill for JSON
+            window.open('/api/sc-calc-generic/index.html?session='+sessionId);
         }
     };
 

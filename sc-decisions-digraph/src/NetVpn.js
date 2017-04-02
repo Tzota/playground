@@ -111,8 +111,9 @@ const NetVpnVM = function(calc) {
         const dto = new sc_calc.jinn_dto();
         dto.product = sc_calc.const.jinn.PRODUCT.CLIENT;
         dto.cert_level = sc_calc.const.jinn.CERT_LEVEL.KS1;
+        dto.is_unlim = false;
 
-        return [dto, dto];
+        return [{ dto, q:1}, { dto, q:11}];
     };
 }
 

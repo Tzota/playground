@@ -20,6 +20,7 @@
     "babel-preset-env": "^1.2.1",
     "babelify": "^7.3.0",
     "browserify": "^14.1.0",
+    "browserify-shim": "^3.8.14",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
@@ -28,5 +29,8 @@
     "gulp-uglify": "^2.1.2",
     "rimraf": "^2.6.1",
     "watchify": "^3.9.0"
+  },
+  "browserify-shim": {
+    "knockout": "global:ko"
   }
 }

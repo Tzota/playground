@@ -1,4 +1,4 @@
-// ./node_modules/watchify/bin/cmd.js index.js -t babelify -o lib/index.js -v
+// ./node_modules/watchify/bin/cmd.js index.js -t babelify -t browserify-shim -o lib/index.js -v
 
 if (typeof module !== 'undefined') {
     require('babel-polyfill');

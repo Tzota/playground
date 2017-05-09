@@ -1,28 +1,60 @@
 'use strict';
-
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
-
 // https://github.com/BrowserSync/recipes/blob/master/recipes/gulp.browserify/gulpfile.js
 
-gulp.task('clean', function() {
-  require('rimraf').sync('build');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var source = require('vinyl-source-stream');
+var babelify = require('babelify');
+var watchify = require('watchify');
+var exorcist = require('exorcist');
+var browserify = require('browserify');
+var browserSync = require('browser-sync').create();
+
+// Watchify args contains necessary cache options to achieve fast incremental bundles.
+// See watchify readme for details. Adding debug true for source-map generation.
+watchify.args.debug = true;
+// Input file.
+var bundler = watchify(browserify('index.js', watchify.args));
+
+// Babel transform
+bundler.transform(
+    babelify.configure({
+        sourceMapRelative: '.',
+        presets: [['env', { 'targets': { 'ie': 9} }]]
+    })
+);
+
+// On updates recompile
+bundler.on('update', bundle);
+
+function bundle() {
+    gutil.log('Compiling JS...');
+
+    return bundler
+        .bundle()
+        .on('error', function(err) {
+            gutil.log(err.message);
+            browserSync.notify('Browserify Error!');
+            this.emit('end');
+        })
+        .pipe(exorcist('lib/index.js.map'))
+        .pipe(source('index.js'))
+        .pipe(gulp.dest('./lib'))
+        .pipe(browserSync.stream({ once: true }));
+}
+
+/**
+ * Gulp task alias
+ */
+gulp.task('bundle', function() {
+    return bundle();
 });
 
-gulp.task('test', function(){
-  return gulp.src('src/**/*.js', { base: '.' })
-  .pipe(sourcemaps.init())
-  // .pipe(concat('app.js')) А вот это будет работать только без экспортов в исходных файлах, т.е. es6 код должен быть под браузер
-  .pipe(babel({ presets: [['env', { 'targets': { 'ie': 9} }]] }))
-  .pipe(uglify())
-  .pipe(sourcemaps.write('maps'))
-  .pipe(rename({ extname: '.min.js' }))
-  .pipe(gulp.dest('build'));
+/**
+ * First bundle, then serve from the ./app directory
+ */
+gulp.task('default', ['bundle'], function() {
+    browserSync.init({
+        server: '.'
+    });
 });
-
-
-gulp.task('default', ['clean', 'test']);

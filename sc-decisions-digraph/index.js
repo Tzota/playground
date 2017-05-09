@@ -1,10 +1,7 @@
 // ./node_modules/watchify/bin/cmd.js index.js -t babelify -t browserify-shim -o lib/index.js -v
 
-if (typeof module !== 'undefined') {
-    require('babel-polyfill');
-    var { NetVpn, NetVpnVM } = require('./src/NetVpn.js');
-}
-
+require('babel-polyfill');
+var { NetVpn, NetVpnVM } = require('./src/NetVpn.js');
 
 //--------------------------------------
 

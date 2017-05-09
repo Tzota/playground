@@ -1,6 +1,4 @@
-if (typeof module !== 'undefined' && module.exports) {
-    var { BaseVm, DisplayProperty, CalcVertex, CalcEdge, SolutionCalc } = require('./lib.js');
-}
+var { BaseVm, DisplayProperty, CalcVertex, CalcEdge, SolutionCalc } = require('./lib.js');
 
 class NetVpn extends SolutionCalc {
     constructor() {
@@ -119,7 +117,5 @@ const NetVpnVM = function(calc) {
 
 // ---------------------------------------
 
-if (typeof module !== 'undefined' && module.exports) {
-    exports.NetVpn = NetVpn;
-    exports.NetVpnVM = NetVpnVM;
-}
+exports.NetVpn = NetVpn;
+exports.NetVpnVM = NetVpnVM;

@@ -6,8 +6,8 @@ namespace strauss_cookbook
     {
         static void Main(string[] args)
         {
-            //  Console.WriteLine("Hello World!");
-            Chapter1.MeetTuple.Do(new string[0]);
+            // Chapter1.MeetTuple.Do(new string[0]);
+            Chapter1.PatternMatching.Do(new string[0]);
         }
     }
 }

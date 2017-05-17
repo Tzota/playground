@@ -9,7 +9,8 @@ namespace strauss_cookbook
             // Chapter1.MeetTuple.Do(args);
             // Chapter1.PatternMatching.Do(args);
             // Chapter1.OutVariables.Do(args);
-            Chapter1.Deconstruction.Do(args);
+            // Chapter1.Deconstruction.Do(args);
+            Chapter1.LocalFunctions.Do(args);
         }
     }
 }

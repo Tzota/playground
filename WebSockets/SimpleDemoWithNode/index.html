@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример чата с веб-сокетом</title>
+</head>
+<body>
+  <script>
+    let ws = new WebSocket("ws://localhost:38456");
+    // выводим новые сообщения в консоль
+    ws.onmessage = ({data}) => {
+      console.log(data);
+    }
+    // отправляем сообщение
+    ws.onopen = () => ws.send('Text');
+  </script>
+</body>
+</html>

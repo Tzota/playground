@@ -1,0 +1,14 @@
+{
+  "name": "simple_demo_with_node",
+  "version": "1.0.0",
+  "description": "https://tproger.ru/translations/what-are-web-sockets/amp/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniyal Guliev",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^3.0.0"
+  }
+}

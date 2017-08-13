@@ -1,0 +1,11 @@
+{
+  "name": "http-server-file-mirror",
+  "version": "1.0.0",
+  "description": "Stream file requested file to http response",
+  "main": "index.js",
+  "scripts": {
+    "test": "tput reset && mocha test.js"
+  },
+  "author": "Daniyal Guliev",
+  "license": "ISC"
+}

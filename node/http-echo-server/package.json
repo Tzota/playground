@@ -1,0 +1,11 @@
+{
+  "name": "http-echo-server",
+  "version": "1.0.0",
+  "description": "echo http input",
+  "main": "index.js",
+  "scripts": {
+    "test": "tput reset && mocha test.js"
+  },
+  "author": "Daniyal Guliev",
+  "license": "ISC"
+}

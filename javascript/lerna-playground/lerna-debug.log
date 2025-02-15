@@ -1,0 +1,26 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   since: 'origin/main',
+0 silly argv   lernaVersion: '8.1.9',
+0 silly argv   '$0': 'node_modules/.bin/lerna',
+0 silly argv   script: 'build'
+0 silly argv }
+1 notice cli v8.1.9
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath /home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground
+4 notice filter changed since "origin/main"
+5 silly hasTags
+6 verbose hasTags false
+7 info Looking for changed packages since origin/main
+8 silly checking diff packages/a
+9 error Error: Command failed with exit code 128: git diff --name-only origin/main -- packages/a
+9 error fatal: bad revision 'origin/main'
+9 error     at makeError (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/execa/lib/error.js:59:11)
+9 error     at module.exports.sync (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/execa/index.js:186:17)
+9 error     at execSync (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:1579:31)
+9 error     at diffSinceIn (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:1993:10)
+9 error     at hasDiffSinceThatIsntIgnored (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:1966:18)
+9 error     at isCandidate (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:2063:77)
+9 error     at /home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:2071:9
+9 error     at Array.forEach (<anonymous>)
+9 error     at collectProjects (/home/tzota/Personal/Projects/github.com/tzota/playground/javascript/lerna-playground/node_modules/lerna/dist/index.js:2070:12)

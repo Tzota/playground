@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "echo building a"
+    "build": "echo building a && mkdir -p dist && cp index.js dist/index.js"
   },
   "author": "",
   "license": "ISC",

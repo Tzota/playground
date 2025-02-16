@@ -5,7 +5,7 @@
   "type": "module",
   "devDependencies": {},
   "scripts": {
-    "build": "echo building b"
+    "build": "echo building b && mkdir -p dist && cp index.js dist/index.js"
   },
   "keywords": [],
   "author": "",

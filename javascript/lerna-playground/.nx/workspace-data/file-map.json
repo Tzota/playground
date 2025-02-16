@@ -1,0 +1,119 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.4.0",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "output.json",
+        "hash": "14521869918191909373"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "16722851342459420272"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11304272513694890893"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "5614531502020812851"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "7701366317550073468"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "7889475129628203895"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "10307142885639291195"
+      },
+      {
+        "file": "jsconfig.json",
+        "hash": "6093857742875188092"
+      },
+      {
+        "file": "package.json",
+        "hash": "3849657198730103971"
+      },
+      {
+        "file": "lerna-debug.log",
+        "hash": "11524372532423090154"
+      }
+    ],
+    "projectFileMap": {
+      "c": [
+        {
+          "file": "packages/c/dist/index.js",
+          "hash": "17680359521886952224"
+        },
+        {
+          "file": "packages/c/index.js",
+          "hash": "17680359521886952224"
+        },
+        {
+          "file": "packages/c/package.json",
+          "hash": "1256141748303975412",
+          "deps": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "b": [
+        {
+          "file": "packages/b/dist/index.js",
+          "hash": "13852294911462223934"
+        },
+        {
+          "file": "packages/b/index.js",
+          "hash": "13852294911462223934"
+        },
+        {
+          "file": "packages/b/package.json",
+          "hash": "5691520263773648918"
+        }
+      ],
+      "d": [
+        {
+          "file": "packages/d/README.md",
+          "hash": "1047326115593003460"
+        },
+        {
+          "file": "packages/d/__tests__/d.test.js",
+          "hash": "11215166217702038757"
+        },
+        {
+          "file": "packages/d/lib/d.js",
+          "hash": "13378757654554106880"
+        },
+        {
+          "file": "packages/d/package.json",
+          "hash": "14355703358680866901"
+        }
+      ],
+      "a": [
+        {
+          "file": "packages/a/dist/index.js",
+          "hash": "7128361460030295642"
+        },
+        {
+          "file": "packages/a/index.js",
+          "hash": "7128361460030295642"
+        },
+        {
+          "file": "packages/a/package.json",
+          "hash": "14698003644845072518",
+          "deps": [
+            "npm:ramda"
+          ]
+        }
+      ]
+    }
+  }
+}

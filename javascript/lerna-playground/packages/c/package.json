@@ -2,9 +2,15 @@
   "name": "c",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+  "dependencies": {
+      "a": "*",
+      "b": "*"
+  },
   "devDependencies": {},
   "scripts": {
-    "build": "echo building c"
+    "build": "echo building c && mkdir -p dist && cp index.js dist/index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

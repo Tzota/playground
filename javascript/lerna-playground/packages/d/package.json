@@ -1,0 +1,22 @@
+{
+  "name": "d",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Daniyal Guliev <tzota@mail.ru>",
+  "type": "module",
+  "license": "ISC",
+  "main": "lib/d.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/d.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Tzota/playground/issues"
+  }
+}
